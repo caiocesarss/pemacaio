@@ -1,13 +1,8 @@
 <?php
 require_once ('./lib/conn_db.php');
 
-$sql = "SELECT * FROM DRIVERS  ";
-$result = mysqli_query($conMy, $sql);
-while ($row = mysqli_fetch_assoc($result)){
-    $drivers[] = $row;
-}
 
-$sql = "SELECT * FROM TRAILERS  ";
+$sql = "SELECT * FROM trailers  ";
 $result = mysqli_query($conMy, $sql);
 $maxWeigth = 0;
 while ($row = mysqli_fetch_assoc($result)){

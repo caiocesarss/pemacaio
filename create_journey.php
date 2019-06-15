@@ -4,13 +4,13 @@ require_once './lib/conn_db.php';
 $loadIds = $_GET['loadids'];
 $loadWeigth = $_GET['weigth'];
 
-$sql = "SELECT * FROM DRIVERS  ";
+$sql = "SELECT * FROM drivers  ";
 $result = mysqli_query($conMy, $sql);
 while ($row = mysqli_fetch_assoc($result)){
     $drivers[] = $row;
 }
 
-$sql = "SELECT  WEIGTH_CAPACITY FROM TRAILERS WHERE TRAILER_ID = ?";
+$sql = "SELECT  WEIGTH_CAPACITY FROM trailers WHERE TRAILER_ID = ?";
 
 $stmt = mysqli_prepare($conMy, $sql);
 mysqli_stmt_bind_param($stmt, "s", $trailerId);
