@@ -26,7 +26,7 @@ while ($row = mysqli_fetch_assoc($result)){
   
   <div class="form-group mx-sm-4 mb-2">
     <label for="weightAvailable">Total Weigth</label>&nbsp;&nbsp;&nbsp;
-    <input disabled type="text" class="form-control" id="weightAvailable" name="weigth">
+    <input readonly type="text" class="form-control" id="weightAvailable" name="weigth">
     <div class="invalid-feedback">
         Total Weigth exceeded the maximum capacity of all trailers
     </div>
