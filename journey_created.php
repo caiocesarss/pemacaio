@@ -8,7 +8,7 @@ $driverId = $_GET['driver'];
 if (!$trailerId || !$driverId) {
     $created = false;
 } else {
-    $sql = "INSERT INTO JOURNEYS (TRAILER_ID, DRIVER_ID) VALUES (?,?)";
+    $sql = "INSERT INTO journeys (TRAILER_ID, DRIVER_ID) VALUES (?,?)";
     $stmt = mysqli_prepare($conMy, $sql);
     mysqli_stmt_bind_param($stmt, "dd", $trailerId, $driverId);
     mysqli_stmt_execute($stmt) or die(mysqli_error($conMy));
@@ -17,7 +17,7 @@ if (!$trailerId || !$driverId) {
     $loadIds = explode(',', $loadIds);
     foreach ($loadIds as $loadId) {
       
-        $sql = "INSERT INTO JOURNEY_LOADS (JOURNEY_ID, LOAD_ID) VALUES (?,?)";
+        $sql = "INSERT INTO journey_loads (JOURNEY_ID, LOAD_ID) VALUES (?,?)";
         $stmt = mysqli_prepare($conMy, $sql);
         mysqli_stmt_bind_param($stmt, "dd", $journeyId, $loadId);
         mysqli_stmt_execute($stmt) or die(mysqli_error($conMy));
