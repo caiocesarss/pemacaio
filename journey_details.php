@@ -2,7 +2,7 @@
 require_once './lib/conn_db.php';
 $journeyId = $_POST['journeyid'];
 
-$sql = "SELECT  (SELECT COUNT(*) FROM JOURNEYS ) TOTAL \n".
+$sql = "SELECT  (SELECT COUNT(*) FROM journeys ) TOTAL \n".
 ", J.JOURNEY_ID AS id \n".
 ", T.TRAILER_NAME \n".
 ", D.DRIVER_NAME \n".
@@ -11,7 +11,7 @@ $sql = "SELECT  (SELECT COUNT(*) FROM JOURNEYS ) TOTAL \n".
 ", CL.DESTINATION \n".
 ", CL.DISTANCE \n".
 ", CL.WEIGTH \n".
-" FROM JOURNEYS J, JOURNEY_LOADS JL, CUSTOMER_LOADS CL, DRIVERS D, TRAILERS T WHERE 1 = 1 
+" FROM journeys J, journey_loads JL, customer_loads CL, drivers D, trailers T WHERE 1 = 1 
  AND J.JOURNEY_ID = JL.JOURNEY_ID AND JL.LOAD_ID = CL.LOAD_ID and J.DRIVER_ID = D.DRIVER_ID 
  AND J.TRAILER_ID = T.TRAILER_ID  AND J.JOURNEY_ID = ?
   ";
