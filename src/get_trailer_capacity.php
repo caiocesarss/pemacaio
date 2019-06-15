@@ -2,7 +2,7 @@
 
 require_once '../lib/conn_db.php';
 $trailerId = $_POST['trailer_id'];
-$sql = "SELECT  WEIGTH_CAPACITY FROM TRAILERS WHERE TRAILER_ID = ?";
+$sql = "SELECT  WEIGTH_CAPACITY FROM trailers WHERE TRAILER_ID = ?";
 
 $stmt = mysqli_prepare($conMy, $sql);
 mysqli_stmt_bind_param($stmt, "s", $trailerId);

@@ -7,13 +7,13 @@ $offset = $_GET['offset'] ? $_GET['offset'] : '0';
 $search = $_GET['search'];
 
 
-$sql = "SELECT * FROM (SELECT  (SELECT COUNT(*) FROM JOURNEYS ) TOTAL \n".
+$sql = "SELECT * FROM (SELECT  (SELECT COUNT(*) FROM journeys ) TOTAL \n".
 ", J.JOURNEY_ID AS id \n".
 ", T.TRAILER_NAME \n".
 ", D.DRIVER_NAME \n".
 ", SUM(CL.DISTANCE) DISTANCE \n".
 ", SUM(CL.WEIGTH) WEIGTH\n".
-" FROM JOURNEYS J, JOURNEY_LOADS JL, CUSTOMER_LOADS CL, DRIVERS D, TRAILERS T WHERE 1 = 1 
+" FROM journeys J, journey_loads JL, customer_lodas CL, drivers D, trailers T WHERE 1 = 1 
  AND J.JOURNEY_ID = JL.JOURNEY_ID AND JL.LOAD_ID = CL.LOAD_ID and J.DRIVER_ID = D.DRIVER_ID 
  AND J.TRAILER_ID = T.TRAILER_ID GROUP BY J.JOURNEY_ID, T.TRAILER_NAME, D.DRIVER_NAME) T WHERE 1=1 
   ";

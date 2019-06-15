@@ -7,10 +7,10 @@ $offset = $_GET['offset'] ? $_GET['offset'] : '0';
 $search = $_GET['search'];
 
 
-$sql = "SELECT  (SELECT COUNT(*) FROM DRIVERS) TOTAL \n".
+$sql = "SELECT  (SELECT COUNT(*) FROM drivers) TOTAL \n".
 ",  D.DRIVER_ID \n".
 ", D.DRIVER_NAME\n".
-" FROM DRIVERS D WHERE 1 = 1 ";
+" FROM drivers D WHERE 1 = 1 ";
 if ($search){
     $sql .= " AND  upper(D.DRIVER_NAME) LIKE UPPER('%$search%')";
 }

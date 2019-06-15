@@ -7,14 +7,14 @@ $offset = $_GET['offset'] ? $_GET['offset'] : '0';
 $search = $_GET['search'];
 
 
-$sql = "SELECT  (SELECT COUNT(*) FROM CUSTOMER_LOADS) TOTAL \n".
+$sql = "SELECT  (SELECT COUNT(*) FROM customer_loads) TOTAL \n".
 ",  CL.LOAD_ID AS id \n".
 ", CL.CUSTOMER_NAME\n".
 ", CL.ORIGIN\n".
 ", CL.DESTINATION\n".
 ", CL.DISTANCE\n".
 ", CL.WEIGTH\n".
-" FROM CUSTOMER_LOADS CL WHERE 1 = 1 ";
+" FROM customer_loads CL WHERE 1 = 1 ";
 if ($search){
     $sql .= " AND  upper(T.CUSOMER_NAME) LIKE UPPER('%$search%')";
 }
